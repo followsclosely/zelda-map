@@ -1,0 +1,44 @@
+p {
+  font-family: Lato;
+}
+
+.navigation {
+  border-collapse: collapse;
+  margin-right: auto;
+  margin-left: auto;
+}
+.navigation td {
+  margin: 0;
+  padding: 0;
+  font-size: 8px;
+  text-align: center;
+  vertical-align: middle;
+}
+
+.map, .map-lines {
+  border-collapse: collapse;
+  margin-right: auto;
+  margin-left: auto;
+}
+.map td, .map-lines td {
+  margin: 0;
+  padding: 0;
+  font-size: 8px;
+  text-align: center;
+  vertical-align: middle;
+}
+
+.map-lines tr:nth-child(22n+1) {
+  border-bottom: 2pt solid black;
+}
+.map-lines tr:nth-child(22n+12) {
+  border-bottom: 1pt dashed red;
+}
+.map-lines td:nth-child(32n+1) {
+  border-right: 2pt solid black;
+}
+.map-lines td:nth-child(32n+17) {
+  border-right: 1pt dashed red;
+}
+
+img { display: block; }

@@ -1,0 +1,58 @@
+<table class="navigation">
+  <tr>
+    <td>
+      <button [disabled]="fullScreen" (click)="zoomOut()" mat-icon-button color="primary">
+        <mat-icon>zoom_out_map</mat-icon>
+      </button>
+    </td>
+    <td>
+      <button [disabled]="fullScreen || y == 0" (click)="setScreen(x, y-1)"  mat-icon-button color="primary">
+        <mat-icon>keyboard_arrow_up</mat-icon>
+      </button>
+    </td>
+    <td>
+      <button [disabled]="!fullScreen" (click)="zoomIn()" mat-icon-button color="primary" >
+        <mat-icon>zoom_in_map</mat-icon>
+      </button>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <button [disabled]="fullScreen || x == 0" (click)="setScreen(x-1, y)" mat-icon-button color="primary">
+        <mat-icon>keyboard_arrow_left</mat-icon>
+      </button>
+    </td>
+    <td>
+      <button (click)="home()" mat-icon-button color="primary">
+        <mat-icon>home</mat-icon>
+      </button>
+    </td>
+    <td>
+      <button [disabled]="fullScreen || x >= 15" (click)="setScreen(x+1, y)" mat-icon-button color="primary">
+        <mat-icon>keyboard_arrow_right</mat-icon>
+      </button>
+    </td>
+  </tr>
+  <tr>
+    <td colspan="3">
+      <button [disabled]="fullScreen || y >= 7" (click)="setScreen(x, y+1)" mat-icon-button color="primary">
+        <mat-icon>keyboard_arrow_down</mat-icon>
+      </button>
+    </td>
+  </tr>
+</table>
+
+
+<table *ngIf="screen" [ngClass]="showGuideLines ? 'map-lines' : 'map'">
+  <tr>
+    <td></td>
+    <td *ngFor="let tile of screen[0]; let x = index">{{x}}</td>
+  </tr>
+  <tr *ngFor="let row of screen; let y = index">
+    <td>{{y}}</td><td *ngFor="let tile of row">
+      <img width="16" height="16" src="{{assets}}/{{tile}}.png"/>
+    </td>
+  </tr>
+</table>
+
+<mat-slide-toggle [(ngModel)]="showGuideLines">Show Guide Lines</mat-slide-toggle>
