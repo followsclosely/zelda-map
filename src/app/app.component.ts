@@ -8,7 +8,7 @@ import { HttpClient } from '@angular/common/http';
 })
 export class AppComponent  {
 
-  assets : string = "https://raw.githubusercontent.com/followsclosely/zelda-overworld/master/src/assets";
+  assets : string = "https://raw.githubusercontent.com/followsclosely/zelda-map/master/src/assets";
   x : number;
   y : number;
   
