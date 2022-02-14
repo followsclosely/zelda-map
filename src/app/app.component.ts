@@ -7,11 +7,9 @@ import { HttpClient } from '@angular/common/http';
   styleUrls: [ './app.component.css' ]
 })
 export class AppComponent  {
-
   assets : string = "https://raw.githubusercontent.com/followsclosely/zelda-map/master/src/assets";
   x : number;
   y : number;
-  
   world : string[][] = [];
   screen : string[][];
   fullScreen : boolean = false;
@@ -26,10 +24,6 @@ export class AppComponent  {
       });
       this.home();
     });
-  }
-
-  public home(){
-    this.setScreen(7,7)
   }
 
   public setScreen(x : number, y : number) {
@@ -47,9 +41,8 @@ export class AppComponent  {
     this.screen = screen;
   }
 
-  public zoomIn() {
-    this.setScreen(this.x, this.y);
-  }
+  public home() { this.setScreen(7,7) }
+  public zoomIn() { this.setScreen(this.x, this.y); }
 
   public zoomOut(){
     this.fullScreen = true;
